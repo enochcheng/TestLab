@@ -6,7 +6,7 @@ This repo is forked from https://github.com/schroepf/TestLab, adding Android.mk 
 
 Add dependency to `build.gradle`:
 ```
-androidTestCompile 'de.schroepf:android-xml-run-listener:0.1.3'
+androidTestCompile 'de.schroepf:android-xml-run-listener:0.2.0'
 ```
 
 ## Integrating android-xml-run-listener using Android.mk
@@ -14,16 +14,23 @@ androidTestCompile 'de.schroepf:android-xml-run-listener:0.1.3'
 LOCAL_STATIC_JAVA_LIBRARIES += android-xml-run-listener
 ```
 
-## Use from Android Studio
+## Activating the XmlRunListener
 
-Add the following option to "Extra options" of your Instrumentation Tests run configurations:
+Add the following to your app's `build.gradle` file's `defaultConfig` section:
 ```
--e listener de.schroepf.androidxmlrunlistener.XmlRunListener
+android {
+    defaultConfig {
+
+        //...
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArgument "listener", "de.schroepf.androidxmlrunlistener.XmlRunListener"
+    }
 ```
 
-## Use from command line
+## [Alternative] Use from command line
 
-Add following option:
+When you don't want to add the XmlRunListener to your project's gradle config you may add the following option:
 ```
 -e listener de.schroepf.androidxmlrunlistener.XmlRunListener
 ```
@@ -42,4 +49,13 @@ adb shell cat /storage/emulated/0/Android/data/your_test_package/files/report.xm
 to copy it from the device to the computer:
 ```
 adb pull /storage/emulated/0/Android/data/your_test_package/files/report.xml
+```
+
+## IMPORTANT: Remove reports from the device
+
+Bofore starting the next test run make sure to remove the report XML files from the device either by
+uninstalling the app before running the test again or by executing:
+
+```
+adb shell rm /storage/emulated/0/Android/data/de.schroepf.demoapp/files/report*.xml
 ```
