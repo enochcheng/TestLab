@@ -9,7 +9,7 @@ This repo is forked from https://github.com/schroepf/TestLab, adding Android.mk 
 Add dependency to `build.gradle`:
 
 ```
-androidTestCompile 'de.schroepf:android-xml-run-listener:0.2.0'
+androidTestCompile 'de.schroepf:android-xml-run-listener:0.2.1'
 ```
 
 ## Integrating android-xml-run-listener using Android.mk
