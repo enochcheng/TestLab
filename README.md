@@ -2,9 +2,11 @@
 
 This repo is forked from https://github.com/schroepf/TestLab, adding Android.mk to build into AOSP environment.
 
-## Integrating android-xml-run-listener using gradle
 
-[ ![Download](https://api.bintray.com/packages/schroepf/schroepf/android-xml-run-listener/images/download.svg) ](https://bintray.com/schroepf/schroepf/android-xml-run-listener/_latestVersion)
+An [AndroidJUnitRunner](https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner.html) [RunListener](http://junit.org/junit4/javadoc/latest/org/junit/runner/notification/RunListener.html) implementation which will create JUnit compatible XML report files containing the results of Andorid Instrumentation tests.
+
+
+## Integrating android-xml-run-listener using gradle
 
 Add dependency to `build.gradle`:
 
