@@ -1,5 +1,7 @@
 # android-xml-run-listener
 
+This repo is forked from https://github.com/schroepf/TestLab, adding Android.mk to build into AOSP environment.
+
 ## Integrating android-xml-run-listener
 
 Add dependency to `build.gradle`:
