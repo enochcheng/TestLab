@@ -2,11 +2,16 @@
 
 This repo is forked from https://github.com/schroepf/TestLab, adding Android.mk to build into AOSP environment.
 
-## Integrating android-xml-run-listener
+## Integrating android-xml-run-listener using gradle
 
 Add dependency to `build.gradle`:
 ```
 androidTestCompile 'de.schroepf:android-xml-run-listener:0.1.3'
+```
+
+## Integrating android-xml-run-listener using Android.mk
+```
+LOCAL_STATIC_JAVA_LIBRARIES += android-xml-run-listener
 ```
 
 ## Use from Android Studio
@@ -14,11 +19,6 @@ androidTestCompile 'de.schroepf:android-xml-run-listener:0.1.3'
 Add the following option to "Extra options" of your Instrumentation Tests run configurations:
 ```
 -e listener de.schroepf.androidxmlrunlistener.XmlRunListener
-```
-
-## Use from Android.mk
-```
-LOCAL_STATIC_JAVA_LIBRARIES += android-xml-run-listener
 ```
 
 ## Use from command line
