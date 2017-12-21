@@ -14,6 +14,11 @@ Add the following option to "Extra options" of your Instrumentation Tests run co
 -e listener de.schroepf.androidxmlrunlistener.XmlRunListener
 ```
 
+## Use from Android.mk
+```
+LOCAL_JAVA_LIBRARIES := android-xml-run-listener
+```
+
 ## Use from command line
 
 Add following option:
