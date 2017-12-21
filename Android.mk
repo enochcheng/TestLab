@@ -6,12 +6,12 @@ LOCAL_MODULE_TAGS := debug optional tests
 
 # Include all test java files.
 LOCAL_SRC_FILES := \
-    $(call all-java-files-under, src/main)
+    $(call all-java-files-under, src/main/java)
 
 LOCAL_STATIC_JAVA_LIBRARIES := android-support-test
 
 LOCAL_MODULE := android-xml-run-listener
-LOCAL_CERTIFICATE := platform
+LOCAL_CERTIFICATE := test
 LOCAL_JACK_ENABLED := disabled
 LOCAL_DEX_PREOPT := false
 
