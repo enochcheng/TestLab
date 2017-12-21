@@ -16,7 +16,7 @@ Add the following option to "Extra options" of your Instrumentation Tests run co
 
 ## Use from Android.mk
 ```
-LOCAL_JAVA_LIBRARIES := android-xml-run-listener
+LOCAL_STATIC_JAVA_LIBRARIES += android-xml-run-listener
 ```
 
 ## Use from command line
