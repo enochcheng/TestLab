@@ -29,17 +29,17 @@ Add following option:
 ```
 to the `adb shell am instrument` command, e.g.:
 ```
-adb shell am instrument -w -r -e listener de.schroepf.androidxmlrunlistener.XmlRunListener  -e debug false de.schroepf.demoapp.test/android.support.test.runner.AndroidJUnitRunner
+adb shell am instrument -w -e listener de.schroepf.androidxmlrunlistener.XmlRunListener -e debug false your_test_package/android.support.test.runner.AndroidJUnitRunner
 ```
 
 ## Retrieve report xml file
 
 The `report.xml` file will be stored in the tests application's documents folder, e.g.:
 ```
-adb shell cat /storage/emulated/0/Android/data/de.schroepf.demoapp/files/report.xml
+adb shell cat /storage/emulated/0/Android/data/your_test_package/files/report.xml
 ```
 
 to copy it from the device to the computer:
 ```
-adb pull /storage/emulated/0/Android/data/de.schroepf.demoapp/files/report.xml
+adb pull /storage/emulated/0/Android/data/your_test_package/files/report.xml
 ```
